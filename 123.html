@@ -1282,7 +1282,22 @@ opacity:0;
 transform:scale(0);
 }
 }
+.project-slider{
+display:flex;
+overflow-x:auto;
+gap:30px;
+scroll-snap-type:x mandatory;
+padding:20px;
+}
 
+.project-slider::-webkit-scrollbar{
+display:none;
+}
+
+.project-slider .box{
+min-width:100%;
+scroll-snap-align:center;
+}
 </style>
 </head>
 
@@ -1438,13 +1453,7 @@ MAXWELL MATRIC HIGHER SECONDARY SCHOOL
 
 <h2>Projects</h2>
 
-<div class="grid">
-
-<div class="box">
-<h3>RECRUITMENT MANAGEMENT SYSTEM</h3>
-<p>Automates recruitment, applications and interview scheduling.</p>
-
-</div>
+<div class="project-slider">
 
 <div class="box">
 <h3>E-LEARNING PLATFORM</h3>
@@ -1464,6 +1473,21 @@ MAXWELL MATRIC HIGHER SECONDARY SCHOOL
 <img src="assets/certificates/image 123/IMG-20250918-WA0026.jpg.jpeg" alt="">
 </div>
 
+<div class="box">
+<h3>RECRUITMENT MANAGEMENT SYSTEM</h3>
+<p>Automates recruitment, applications and interview scheduling.</p>
+</div>
+
+<div class="box">
+<h3>SALES DATA ANALYSIS</h3>
+<p>Analyzed sales data to identify trends, improve business decisions, and enhance overall sales performance through data-driven insights.</p>
+</div>
+
+<div class="box">
+<h3>SNAKE GAME</h3>
+<p>Developed a classic Snake Game in Java featuring real-time controls, score tracking, and increasing difficulty as the snake grows.</p>
+</div>
+   
 </div>
 
 </div>
@@ -1743,6 +1767,20 @@ sec.style.transform="translateY(0)";
 }
 });
 });
+</script>
+
+<script>
+let slides=document.querySelectorAll(".project-slide");
+let index=0;
+
+setInterval(()=>{
+slides[index].classList.remove("active");
+
+index=(index+1)%slides.length;
+
+slides[index].classList.add("active");
+
+},3000);
 </script>
 </body>
 </html>
