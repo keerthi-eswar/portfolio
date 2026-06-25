@@ -872,30 +872,51 @@ transform:translateY(0);
 }
 
 .profile-img{
-position:relative;
+width:250px;
+height:250px;
+border-radius:50%;
+object-fit:cover;
+border:6px solid white;
+
+animation:floatProfile 4s ease-in-out infinite;
+
+box-shadow:
+0 0 20px #00ff00,
+0 0 40px #00ff00,
+0 0 80px #00ff00;
+}
+
+.profile-img{
 animation:
 floatProfile 4s ease-in-out infinite,
-profileRotate 8s linear infinite;
+glowPulse 3s infinite;
 }
 
-@keyframes profileRotate{
+@keyframes glowPulse{
+0%{
+box-shadow:
+0 0 20px #39ff14,
+0 0 40px #39ff14;
+}
+50%{
+box-shadow:
+0 0 40px #39ff14,
+0 0 80px #39ff14,
+0 0 120px #39ff14;
+}
 100%{
-filter:hue-rotate(360deg);
+box-shadow:
+0 0 20px #39ff14,
+0 0 40px #39ff14;
 }
 }
-
+   
 .profile-img{
 position:relative;
 animation:
 floatProfile 4s ease-in-out infinite,
-profileRotate 8s linear infinite;
 }
 
-@keyframes profileRotate{
-100%{
-filter:hue-rotate(360deg);
-}
-}
 
 .projects .box{
 animation:projectPulse 3s infinite;
@@ -1347,7 +1368,7 @@ Java Full Stack Developer | AI Enthusiast |
 Cybersecurity Learner | Problem Solver
 </p>
 
-<a href="resume.pdf" class="btn">Download Resume</a>
+<a href="assets/certificates/KEERTHI ESWAR V-RESUME.pdf" class="btn">Download Resume</a>
 
 </section>
 
